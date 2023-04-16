@@ -31,7 +31,7 @@ const gaugeStyle = css(`
   width: 100%;
   height: 100%;
   border-radius: 100%;
-
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
   background-color: #39b4cc;
   background-image: linear-gradient(91deg, transparent 50%, #a2ecfb 50%),
     linear-gradient(90deg, #a2ecfb 50%, transparent 50%);
@@ -92,19 +92,19 @@ export const Gauge = () => {
     <div className="gauge-container" css={gaugeStyle}>
       <div id="activeBorder" className="active-border">
         <div id="circle" className="circle">
-          <div style={{ width: "100%", height: "100%", position: "relative" }}>
-            <Image
-              id="rotate-me"
-              className="rotate-me"
-              alt="Mountains"
-              src="/vercel.svg"
-              fill={1}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
           <span className="prec">{deg}&#176;</span>
           <p id="startDeg" className="-90"></p>
         </div>
+      </div>
+      <div style={{ width: "100%", height: "100%", position: "relative" }}>
+        <Image
+          id="rotate-me"
+          className="rotate-me"
+          alt="Mountains"
+          src="/vercel.svg"
+          fill={1}
+          style={{ objectFit: "contain" }}
+        />
       </div>
     </div>
   );
